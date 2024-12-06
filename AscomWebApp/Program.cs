@@ -1,0 +1,85 @@
+using System.Linq;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
+using GetIPAData.Services;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+
+/*  comando powerShell per controllare endpoint per ottenere la richiesta API
+    $auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("test:TestMePlease!"))
+    Invoke-WebRequest -Uri "https://mobile.digistat.it/CandidateApi/Patient/GetList" `
+    -Headers @{Authorization=("Basic " + $auth)} `
+    -Method Get
+*/
+
+namespace AscomWebApp;
+
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
+
+        // Aggiungo i servizzi necessari per MCV e Razor Pages
+        builder.Services.AddControllersWithViews(); 
+        builder.Services.AddHttpClient<PatientService>();
+        builder.Services.AddRazorPages();
+
+        var app = builder.Build();
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage(); // Mostra la pagina di errore in modalità sviluppo
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts(); // Abilita gli header HSTS
+        }
+
+        app.UseHttpsRedirection();
+        app.UseWebSockets();
+        // Per servire file statici come CSS, immagini, ecc...
+        app.UseStaticFiles();  
+        // Necessario per abilitare il routing
+        app.UseRouting();
+
+
+        // Configura i controller e le Razor Pages come endpoint
+        app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+        // Aggiungo anche la route predefinita per l'MVC
+        app.MapDefaultControllerRoute();
+
+        Console.WriteLine("Weeee stiamo partendo");
+
+        using (var scope = app.Services.CreateScope())
+        {
+            var patientService = scope.ServiceProvider.GetRequiredService<PatientService>();
+            var patientsList = await patientService.GetPatientsAsync();
+
+            if (patientsList != null && patientsList.Count > 0)
+            {
+                Console.WriteLine("Lista pazienti ottenuta !!!");
+                //foreach (var patient in patientsList)
+                //{
+                //    //Console.WriteLine($"ID: {patient.id}, Nome: {patient.givenName} {patient.familyName}, Data di nascita: {patient.birthDate}");
+                //    //Console.WriteLine($"{patient.parameters.Count}");
+                //    //foreach (var item in patient.parameters)
+                //    //{
+                //    //    Console.WriteLine($"ID: {item.id}, Nome: {item.name}, Value: {item.value}, Alarm: {item.alarm}");
+                //    //}
+                //}
+            }
+            else
+            {
+                Console.WriteLine("Non ci sono pazienti disponibili.");
+            }
+        }
+        app.Run();
+    }
+}

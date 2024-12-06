@@ -1,0 +1,40 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/CSS/Index.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CSS\Index.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vIG4RrD\u002BRSQ\u002B7aOxgDdgK8tA3GrulltKX8SP5Xlvujw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3335"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vIG4RrD\u002BRSQ\u002B7aOxgDdgK8tA3GrulltKX8SP5Xlvujw=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 14:39:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/CSS/Index.g7ro24xs12.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\CSS\Index.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g7ro24xs12"},{"Name":"integrity","Value":"sha256-vIG4RrD\u002BRSQ\u002B7aOxgDdgK8tA3GrulltKX8SP5Xlvujw="},{"Name":"label","Value":"_content/AscomWebApp/CSS/Index.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3335"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vIG4RrD\u002BRSQ\u002B7aOxgDdgK8tA3GrulltKX8SP5Xlvujw=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 14:39:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/JS/Index.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JS\Index.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-aX3HK3OgZSQcBgEr8j9qCThhSs\u002B37r6Q7gr1P\u002BlnL5I="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5647"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022aX3HK3OgZSQcBgEr8j9qCThhSs\u002B37r6Q7gr1P\u002BlnL5I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 06 Dec 2024 09:26:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/JS/Index.lt8n5rwuq8.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JS\Index.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lt8n5rwuq8"},{"Name":"integrity","Value":"sha256-aX3HK3OgZSQcBgEr8j9qCThhSs\u002B37r6Q7gr1P\u002BlnL5I="},{"Name":"label","Value":"_content/AscomWebApp/JS/Index.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5647"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022aX3HK3OgZSQcBgEr8j9qCThhSs\u002B37r6Q7gr1P\u002BlnL5I=\u0022"},{"Name":"Last-Modified","Value":"Fri, 06 Dec 2024 09:26:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/JS/UpDateJson.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JS\UpDateJson.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-eX5xTsTdGb0mwbtHncpzo\u002BKd3d49vq8aGC6fm1F1CVc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1697"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022eX5xTsTdGb0mwbtHncpzo\u002BKd3d49vq8aGC6fm1F1CVc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 18:43:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AscomWebApp/JS/UpDateJson.l9qmgsxtrp.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\JS\UpDateJson.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l9qmgsxtrp"},{"Name":"integrity","Value":"sha256-eX5xTsTdGb0mwbtHncpzo\u002BKd3d49vq8aGC6fm1F1CVc="},{"Name":"label","Value":"_content/AscomWebApp/JS/UpDateJson.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1697"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022eX5xTsTdGb0mwbtHncpzo\u002BKd3d49vq8aGC6fm1F1CVc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 05 Dec 2024 18:43:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

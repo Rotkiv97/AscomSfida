@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "a7cgpYMpZdSCjA3reixgzwITXJ9EfKnC2uDaxxvD2cM=",
+  "Source": "AscomWebApp",
+  "BasePath": "_content/AscomWebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AscomWebApp\\wwwroot",
+      "Source": "AscomWebApp",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "SourceId": "AscomWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "RelativePath": "CSS/Index#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g7ro24xs12",
+      "Integrity": "vIG4RrD+RSQ+7aOxgDdgK8tA3GrulltKX8SP5Xlvujw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CSS\\Index.css"
+    },
+    {
+      "Identity": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "SourceId": "AscomWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "RelativePath": "JS/Index#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lt8n5rwuq8",
+      "Integrity": "aX3HK3OgZSQcBgEr8j9qCThhSs+37r6Q7gr1P+lnL5I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JS\\Index.js"
+    },
+    {
+      "Identity": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\UpDateJson.js",
+      "SourceId": "AscomWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "RelativePath": "JS/UpDateJson#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "l9qmgsxtrp",
+      "Integrity": "eX5xTsTdGb0mwbtHncpzo+Kd3d49vq8aGC6fm1F1CVc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JS\\UpDateJson.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "CSS/Index.css",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vIG4RrD+RSQ+7aOxgDdgK8tA3GrulltKX8SP5Xlvujw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 14:39:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vIG4RrD+RSQ+7aOxgDdgK8tA3GrulltKX8SP5Xlvujw="
+        }
+      ]
+    },
+    {
+      "Route": "CSS/Index.g7ro24xs12.css",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vIG4RrD+RSQ+7aOxgDdgK8tA3GrulltKX8SP5Xlvujw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 14:39:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g7ro24xs12"
+        },
+        {
+          "Name": "label",
+          "Value": "CSS/Index.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vIG4RrD+RSQ+7aOxgDdgK8tA3GrulltKX8SP5Xlvujw="
+        }
+      ]
+    },
+    {
+      "Route": "JS/Index.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5647"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aX3HK3OgZSQcBgEr8j9qCThhSs+37r6Q7gr1P+lnL5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 09:26:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aX3HK3OgZSQcBgEr8j9qCThhSs+37r6Q7gr1P+lnL5I="
+        }
+      ]
+    },
+    {
+      "Route": "JS/Index.lt8n5rwuq8.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5647"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aX3HK3OgZSQcBgEr8j9qCThhSs+37r6Q7gr1P+lnL5I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 06 Dec 2024 09:26:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lt8n5rwuq8"
+        },
+        {
+          "Name": "label",
+          "Value": "JS/Index.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aX3HK3OgZSQcBgEr8j9qCThhSs+37r6Q7gr1P+lnL5I="
+        }
+      ]
+    },
+    {
+      "Route": "JS/UpDateJson.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\UpDateJson.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1697"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eX5xTsTdGb0mwbtHncpzo+Kd3d49vq8aGC6fm1F1CVc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 18:43:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eX5xTsTdGb0mwbtHncpzo+Kd3d49vq8aGC6fm1F1CVc="
+        }
+      ]
+    },
+    {
+      "Route": "JS/UpDateJson.l9qmgsxtrp.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\UpDateJson.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1697"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eX5xTsTdGb0mwbtHncpzo+Kd3d49vq8aGC6fm1F1CVc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 05 Dec 2024 18:43:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l9qmgsxtrp"
+        },
+        {
+          "Name": "label",
+          "Value": "JS/UpDateJson.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eX5xTsTdGb0mwbtHncpzo+Kd3d49vq8aGC6fm1F1CVc="
+        }
+      ]
+    }
+  ]
+}

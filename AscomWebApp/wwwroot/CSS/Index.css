@@ -1,0 +1,202 @@
+body html {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #333;
+}
+
+.no-patients {
+    text-align: center;
+    font-size: 1.2em;
+    color: #888;
+}
+
+
+.container {
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.grid-list {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.header {
+    align-items: center;
+    text-align: center;
+}
+
+.header p {
+    font-size: 3.5em;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.header-filter {
+    position: relative;
+    background-color: gray;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.header-filter h1 {
+    color: white;
+    font-size: 3.5em;
+    margin: 0;
+    font-weight: bold;
+}
+
+
+.patient-list {
+    position: relative;
+    width: 60%;
+    max-height: 95%;
+    overflow-y: auto;
+}
+
+.filter-list {
+    position: relative;
+    width: 30%;
+    max-height: 60%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-list h1 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.double-choice {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.double-choice button {
+    flex: 1;
+    height: 30px;
+    width: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.double-choice button:hover {
+    background-color: dodgerblue;
+}
+
+.double-choice button.active {
+    background-color: dodgerblue;
+}
+
+.table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.alarm-indicator {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.alarm-indicator.red {
+    background-color: red;
+}
+
+.alarm-indicator.green {
+    background-color: green;
+}
+
+
+.sort-reset {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.sort-reset button {
+    flex: 1;
+    height: 30px;
+    width: 10px;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: gray;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#button-filter {
+    background-color: green;
+    color: white;
+}
+
+#button-filter:hover {
+    background-color: dodgerblue;
+}
+
+#button-restfilter {
+    background-color: orangered;
+    color: white;
+}
+
+#button-restfilter:hover {
+    background-color: dodgerblue;
+}

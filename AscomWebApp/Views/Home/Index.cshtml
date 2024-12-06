@@ -1,0 +1,101 @@
+@model AscomWebApp.Patients
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/CSS/Index.css" />
+    <title>Lista Pazienti</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <p>Lista Pazienti</p>
+        </div>
+        <div class="grid-list">
+            @if (Model != null && Model.patients.Count > 0)
+        {
+            <div class="patient-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FamilyName</th>
+                            <th>GivenName</th>
+                            <th>Sex</th>
+                            <th>Birth Date</th>
+                            <th>N.Parameters</th>
+                            <th>State Alarm</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var patient in Model.patients)
+                        {
+                        <tr>
+                            <td>@patient.givenName</td>
+                            <td>@patient.familyName</td>
+                            <th>@patient.sex</th>
+                            <td>@patient.birthDate.ToString("dd/MM/yyyy")</td>
+                            <td>@patient.parameters.Count</td>
+                            <td>
+                                <span class="alarm-indicator @(patient.alarmIsActive ? "red" : "green")"></span>
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="no-patients">
+                <p>Non ci sono pazienti disponibili</p>
+            </div>
+        }
+            <div class="filter-list">
+                <div class="header-filter">
+                    <h1>Filter Patient</h1>
+                </div>
+                <h1>FamilyName</h1>
+                <div class="double-choice familyName-filter">
+                    <button>A-Z</button>
+                    <button>Z-A</button>
+                </div>
+                <h1>GivenName</h1>
+                <div class="double-choice givenName-filter">
+                    <button>A-Z</button>
+                    <button>Z-A</button>
+                </div>
+                <h1>Sex</h1>
+                <div class="double-choice sex-filter">
+                    <button>M</button>
+                    <button>F</button>
+                </div>
+                <h1>Birth Date</h1>
+                <div class="double-choice birthDate-filter">
+                    <button>old</button>
+                    <button>young</button>
+                </div>
+                <h1>State Alarm</h1>
+                <div class="double-choice stateAlarm-filter">
+                    <button>active</button>
+                    <button>not active</button>
+                </div>
+                <br />
+                <div class="sort-reset ">
+                    <button id="button-filter">Sorting</button>
+                    <button id="button-restfilter">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script id="patients-data" type="application/json">
+        @Html.Raw(ViewBag.PatientsJson ?? "{}")
+    </script>
+    <script src="~/JS/Index.js"></script>
+</body>
+</html>
+
+
+
