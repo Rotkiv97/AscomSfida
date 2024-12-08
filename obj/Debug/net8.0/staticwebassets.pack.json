@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "PackagePath": "staticwebassets\\CSS\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "PackagePath": "staticwebassets\\JS\\Index.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AscomWebApp.props",
+      "PackagePath": "build\\AscomWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AscomWebApp.props",
+      "PackagePath": "buildMultiTargeting\\AscomWebApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AscomWebApp.props",
+      "PackagePath": "buildTransitive\\AscomWebApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "PCS2unrmoszqtvaP6sWg+pCsMW3vfz0Te1e8dj6lBF4=",
+  "Source": "AscomWebApp",
+  "BasePath": "_content/AscomWebApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AscomWebApp\\wwwroot",
+      "Source": "AscomWebApp",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "SourceId": "AscomWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "RelativePath": "CSS/Index#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fknygj6tql",
+      "Integrity": "MXj9iDzTVKyzEo8YsDy1N6k6jSgvfu3EEmpXIYyXuio=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CSS\\Index.css"
+    },
+    {
+      "Identity": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "SourceId": "AscomWebApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\",
+      "BasePath": "_content/AscomWebApp",
+      "RelativePath": "JS/Index#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2atbzi7ym2",
+      "Integrity": "+uO0mMSfKR18kw66PLJQbO7lcDT9eBXdIpIz64F86/w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JS\\Index.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "CSS/Index.css",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3487"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MXj9iDzTVKyzEo8YsDy1N6k6jSgvfu3EEmpXIYyXuio=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 21:27:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MXj9iDzTVKyzEo8YsDy1N6k6jSgvfu3EEmpXIYyXuio="
+        }
+      ]
+    },
+    {
+      "Route": "CSS/Index.fknygj6tql.css",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\Index.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3487"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MXj9iDzTVKyzEo8YsDy1N6k6jSgvfu3EEmpXIYyXuio=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 21:27:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fknygj6tql"
+        },
+        {
+          "Name": "label",
+          "Value": "CSS/Index.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MXj9iDzTVKyzEo8YsDy1N6k6jSgvfu3EEmpXIYyXuio="
+        }
+      ]
+    },
+    {
+      "Route": "JS/Index.2atbzi7ym2.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+uO0mMSfKR18kw66PLJQbO7lcDT9eBXdIpIz64F86/w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 20:49:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2atbzi7ym2"
+        },
+        {
+          "Name": "label",
+          "Value": "JS/Index.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+uO0mMSfKR18kw66PLJQbO7lcDT9eBXdIpIz64F86/w="
+        }
+      ]
+    },
+    {
+      "Route": "JS/Index.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6903"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+uO0mMSfKR18kw66PLJQbO7lcDT9eBXdIpIz64F86/w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 07 Dec 2024 20:49:54 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+uO0mMSfKR18kw66PLJQbO7lcDT9eBXdIpIz64F86/w="
+        }
+      ]
+    }
+  ]
+}
