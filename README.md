@@ -1,5 +1,7 @@
 ### SFIDA ASCOM 
 
+![HomePage](./wwwroot/images/HomePage.png)
+
 ## Indice
 
 1. [Descrizione del Progetto](#descrizione-del-progetto)
@@ -46,28 +48,27 @@ Nel file **`/Models/GetIPAData.cs`**, ho creato il servizio `PatientService`.
         }
     ```
 2. #### **Funzione  `GetPatientsAsync()`**
-    - Questa Funzione mi restituisce una list di modelli `GetDataPatient`
-    - Qui inzializzo anche il modello `Patients` che sa il modello che mi conterrà tutti i pazienti
-    - Poi poi ottengo i dati dell'API cont `GetAsync("Patient/GetList")`;
-    - Succesivamente se la risposta è buona, deserializzo i dati all'interno di una lista 
-    - Poi fo i controlli su tutti i pazienti e riempio la lista del modello Patients.
-```csharp
-    app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-```
+    - La Funzione `GetPatientsAsync()` mi restituisce una lista di modelli `GetDataPatient`, che rappresentano i pazienti.
+    - Inizializzazione del modello `Patients`, che conterrà tutti i pazienti.
+    - Chiamata API effetuata tramite `GetAsync("Patient/GetList")`, e recupero i dati relativi ai pazienti.
+    - Se la risposta API è positiva, i dati ottenuti vengono deserializzati.
+    - Successivamente vengo fatti dei controlli su ogni paziente, per poi essere aggiunti alla lista del modello `Patients`.
+
 ### Filtraggio e Ordinamento
 #### File **`Index.js`**
-Questo file gestisce tutto il sistema di Filtraggio e Sort ed eventi click.
+Questo file gestisce tutto il sistema di Filtraggio, Sort e Search ed eventi click.
 1. #### **Gestione degli eventi dei Button**
 2. #### **Funzione `GetDataPatient()`**
 3. #### **Funzione `UpDateTablePatient(patientFilter)`**
 4. #### **Funzione `FilterEndSortPatient()`**
 5. #### **Funzione `ResetFilters()`**
+6. #### **Funzione `SearchPatient()`**
 
 ### Tecnologie Usate
 ```
 Framework: ASP.NET Core
 Linguaggi: C#, JavaScript
-Frontend: Razor Pages, HTML, classi
+Frontend: Razor Pages, HTML, CSS
 Gestione API : HTTP Client
 ```
 

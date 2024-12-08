@@ -14,6 +14,13 @@
         <div class="header">
             <p>Lista Pazienti</p>
         </div>
+        <br />
+        <div class="search-patient">
+            <p>GivenName</p>
+            <input type="text" id="search-GivenName" class="search-button" placeholder="  Search ...  " />
+            <p>FamilyName</p>
+            <input type="text" id="search-FamilyName"  class="search-button" placeholder="  Search ...  " />
+        </div>
         <div class="grid-list">
             @if (Model != null && Model.patients.Count > 0)
             {
@@ -21,12 +28,13 @@
                     <table>
                         <thead>
                             <tr>
-                                <th>FamilyName</th>
                                 <th>GivenName</th>
+                                <th>FamilyName</th>
                                 <th>Sex</th>
                                 <th>Birth Date</th>
                                 <th>N.Parameters</th>
                                 <th>State Alarm</th>
+                                <th>Edit Patient</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,12 +43,13 @@
                                 <tr>
                                     <td>@patient.givenName</td>
                                     <td>@patient.familyName</td>
-                                    <th>@patient.sex</th>
+                                    <td>@patient.sex</td>
                                     <td>@patient.birthDate.ToString("dd/MM/yyyy")</td>
                                     <td>@patient.parameters.Count</td>
                                     <td>
                                         <span class="alarm-indicator @(patient.alarmIsActive ? "red" : "green")"></span>
                                     </td>
+                                    <td>Edit</td>
                                 </tr>
                             }
                         </tbody>
@@ -53,45 +62,45 @@
                     <p>Non ci sono pazienti disponibili</p>
                 </div>
             }
-        <div class="filter-list">
-            <div class="header-filter">
-                <h1>Filter Patient</h1>
-            </div>
-            <h1>FamilyName</h1>
-            <div class="double-choice familyName-filter">
-                <button>A-Z</button>
-                <button>Z-A</button>
-            </div>
-            <h1>GivenName</h1>
-            <div class="double-choice givenName-filter">
-                <button>A-Z</button>
-                <button>Z-A</button>
-            </div>
-            <h1>Sex</h1>
-            <div class="double-choice sex-filter">
-                <button>M</button>
-                <button>F</button>
-            </div>
-            <h1>Birth Date</h1>
-            <div class="double-choice birthDate-filter">
-                <button>Old</button>
-                <button>Young</button>
-            </div>
-            <h1>N° Parameters</h1>
-            <div class="double-choice parameters-filter">
-                <button>High</button>
-                <button>Low</button>
-            </div>
-            <h1>State Alarm</h1>
-            <div class="double-choice stateAlarm-filter">
-                <button>Active</button>
-                <button>Not Active</button>
-            </div>
-            <br />
-            <div class="sort-reset ">
-                <button id="button-filter">Sorting</button>
-                <button id="button-restfilter">Reset</button>
-            </div>
+            <div class="filter-list">
+                <div class="header-filter">
+                    <h1>Filter Patient</h1>
+                </div>
+                <h1>FamilyName</h1>
+                <div class="double-choice familyName-filter">
+                    <button>A-Z</button>
+                    <button>Z-A</button>
+                </div>
+                <h1>GivenName</h1>
+                <div class="double-choice givenName-filter">
+                    <button>A-Z</button>
+                    <button>Z-A</button>
+                </div>
+                <h1>Sex</h1>
+                <div class="double-choice sex-filter">
+                    <button>M</button>
+                    <button>F</button>
+                </div>
+                <h1>Birth Date</h1>
+                <div class="double-choice birthDate-filter">
+                    <button>Old</button>
+                    <button>Young</button>
+                </div>
+                <h1>N° Parameters</h1>
+                <div class="double-choice parameters-filter">
+                    <button>High</button>
+                    <button>Low</button>
+                </div>
+                <h1>State Alarm</h1>
+                <div class="double-choice stateAlarm-filter">
+                    <button>Active</button>
+                    <button>Not Active</button>
+                </div>
+                <br />
+                <div class="sort-reset ">
+                    <button id="button-filter">Sorting</button>
+                    <button id="button-restfilter">Reset</button>
+                </div>
         </div>
         </div>
     </div>

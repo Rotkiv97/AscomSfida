@@ -44,9 +44,9 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseWebSockets();
-        // Per servire file statici come CSS, immagini, ecc...
+        // Per servire file statici come CSS, ecc...
         app.UseStaticFiles();  
-        // Necessario per abilitare il routing
+        // Per abilitare il routing
         app.UseRouting();
 
 
@@ -57,9 +57,9 @@ public class Program
         // Aggiungo anche la route predefinita per l'MVC
         app.MapDefaultControllerRoute();
 
-        using (var scope = app.Services.CreateScope())
+        using (var serviceScope = app.Services.CreateScope())
         {
-            var patientService = scope.ServiceProvider.GetRequiredService<PatientService>();
+            var patientService = serviceScope.ServiceProvider.GetRequiredService<PatientService>();
             var patientsList = await patientService.GetPatientsAsync();
 
             //if (patientsList != null && patientsList.Count > 0)

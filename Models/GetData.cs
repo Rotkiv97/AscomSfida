@@ -44,11 +44,18 @@ namespace AscomWebApp
     public class Patients
     {
         public List<GetDataPatient> patients { get; set; } = new List<GetDataPatient>();
-        
+        //public string _givenName { get; set; } = string.Empty;
+        //public string _familyName { get; set; } = string.Empty;
+
         public void AddPatient(GetDataPatient patient)
         {
             if (patient != null)
                 patients.Add(patient);
+        }
+
+        public void getPatinet()
+        {
+
         }
 
         public void GetPatients()

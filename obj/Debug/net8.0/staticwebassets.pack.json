@@ -9,10 +9,6 @@
       "PackagePath": "staticwebassets\\JS\\Index.js"
     },
     {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
-    },
-    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

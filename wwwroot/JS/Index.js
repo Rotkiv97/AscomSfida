@@ -1,5 +1,7 @@
 let originalPatients = [];
 let filteredPatients = [];// Lista dei pazienti temporanea
+let searchPatinets = [];
+
 document.addEventListener('DOMContentLoaded', function () {
     getPatients();
     document.querySelectorAll('.double-choice').forEach(function (group) {
@@ -18,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('button-filter').addEventListener('click', FilterEndSortPatient);
     document.getElementById('button-restfilter').addEventListener('click', ResetFilters);
+    document.getElementById('search-GivenName').addEventListener('input', SearchPatient);
+    document.getElementById('search-FamilyName').addEventListener('input', SearchPatient);
 });
 
 // questa funzione mi restituisce i dati json in text 
@@ -48,6 +52,7 @@ function UpDateTablePatient(PatientFilter) {
                 <td>${new Date(patient.birthDate).toLocaleDateString()}</td>
                 <td>${patient.parameters.length}</td>
                 <td><span class="alarm-indicator ${patient.alarmIsActive ? 'red' : 'green'}"></span></td>
+                <td>Edit</td>
             </tr>`;
         table.insertAdjacentHTML('beforeend', row);
     })
@@ -55,12 +60,17 @@ function UpDateTablePatient(PatientFilter) {
 
 //questa funzione gestique i filtri attivi e me li orgina, e mi rende alla fine una nuova tabella aggiornata grazie a UpDateTablePatient
 function FilterEndSortPatient() {
-    // 1) ottenengo la lista di oggetti patient
+    // 1) ottenengo la lista di oggetti patient e se il search dei Pazineti è attivo filtro l'array di  searchPatinets
     // 2) controllo quali filtri sono attivi o se sono attivi
     // 3) ordino i pazienti a seconda del filtro
     // 4) creo una nuova tabella
     try {
-        let patients = [...originalPatients]; // Copia della lista originale
+        let patients = [];
+        if (searchPatinets.length > 0) {
+            patients = [...searchPatinets];
+        }
+        else
+            patients = [...originalPatients]; // Copia della lista originale
         filteredPatients = [];
 
         if (!Array.isArray(patients)) {
@@ -165,6 +175,59 @@ function FilterEndSortPatient() {
 // e resetto anche le attivazioni di filtri;
 function ResetFilters() {
     filteredPatients = [...originalPatients];
-    UpDateTablePatient(originalPatients);
+    searchPatinets = [];
+    document.getElementById('search-GivenName').value = '';
+    document.getElementById('search-FamilyName').value = '';
     document.querySelectorAll('.double-choice button').forEach(button => button.classList.remove('active'));
+    UpDateTablePatient(originalPatients);
+}
+
+
+function SearchPatient(event) {
+    searchPatinets = [];
+    const idSearch = event.target.id;
+    const valueSearch = event.target.value.trim().toLowerCase();
+    let name = '';
+    let lastname = '';
+
+    if (idSearch === 'search-GivenName') {
+        name = valueSearch;
+        console.log("Sta modificando l'input del ->", idSearch);
+    } else if (idSearch === 'search-FamilyName') {
+        lastname = valueSearch;
+        console.log("Sta modificando l'input del ->", idSearch);
+    } else {
+        console.log("Input non riconosciuto:", idSearch);
+    }
+
+    if (!name && !lastname) {
+        UpDateTablePatient(originalPatients);
+        return ;
+    }
+
+    for (let item of originalPatients) {
+        let isName = false;
+        let isLastName = false;
+
+        if (name) {
+            isName = item.givenName.toLowerCase().includes(name.toLowerCase());
+        }
+        if (lastname) {
+            isLastName = item.familyName.toLowerCase().includes(lastname.toLowerCase());
+        }
+        if (isLastName || isName)
+            searchPatinets.push(item);
+    }
+
+    searchPatinets.sort((a, b) => {
+        if (name && a.givenName.toLowerCase().startsWith(name) !== b.givenName.toLowerCase().startsWith(name)) {
+            return b.givenName.toLowerCase().startsWith(name) - a.givenName.toLowerCase().startsWith(name);
+        }
+        if (lastname && a.familyName.toLowerCase().startsWith(lastname) !== b.familyName.toLowerCase().startsWith(lastname)) {
+            return b.familyName.toLowerCase().startsWith(lastname) - a.familyName.toLowerCase().startsWith(lastname);
+        }
+        return a.givenName.localeCompare(b.givenName) || a.familyName.localeCompare(b.familyName);
+    });
+
+    UpDateTablePatient(searchPatinets);
 }
