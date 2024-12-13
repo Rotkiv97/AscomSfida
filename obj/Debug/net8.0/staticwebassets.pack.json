@@ -5,8 +5,44 @@
       "PackagePath": "staticwebassets\\CSS\\Index.css"
     },
     {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\InfoDatailEdit.css",
+      "PackagePath": "staticwebassets\\CSS\\InfoDatailEdit.css"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\TableFilterSort.css",
+      "PackagePath": "staticwebassets\\CSS\\TableFilterSort.css"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\TableParameters.css",
+      "PackagePath": "staticwebassets\\CSS\\TableParameters.css"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\CSS\\TablePatient.css",
+      "PackagePath": "staticwebassets\\CSS\\TablePatient.css"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\DetailEdit.js",
+      "PackagePath": "staticwebassets\\JS\\DetailEdit.js"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\FilterSort.js",
+      "PackagePath": "staticwebassets\\JS\\FilterSort.js"
+    },
+    {
       "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
       "PackagePath": "staticwebassets\\JS\\Index.js"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Utils.js",
+      "PackagePath": "staticwebassets\\JS\\Utils.js"
+    },
+    {
+      "Id": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\images\\HomePage.png",
+      "PackagePath": "staticwebassets\\images\\HomePage.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AscomWebApp.Microsoft.AspNetCore.StaticWebAssets.props",

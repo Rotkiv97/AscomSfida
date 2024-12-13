@@ -1,0 +1,42 @@
+@model AscomWebApp.GetDataPatient
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/CSS/TableParameters.css" />
+    <title>Parameters: @Model.givenName @Model.familyName</title>
+</head>
+<body>
+    <div class="prameters-div">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Value</th>
+                    <th>State Alarm</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="info-parameters">
+                    <h1>|Patient: @Model.givenName @Model.familyName  </h1>
+                    <h1><strong>|Birth Date:</strong> @Model.birthDate.ToString("dd/MM/yyyy")</h1>
+                    <h1><strong>|Sex:</strong> @Model.sex</h1>
+                </div>
+                @foreach (var parameter in Model.parameters){
+                    <tr>
+                        <td>@parameter.id</td>
+                        <td>@parameter.name</td>
+                        <td>@parameter.value</td>
+                        <td>
+                            <span class="alarm-indicator @(parameter.alarm ? "red" : "green")"></span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

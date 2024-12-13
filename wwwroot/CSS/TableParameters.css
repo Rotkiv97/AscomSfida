@@ -1,0 +1,41 @@
+
+.prameters-div {
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+}
+
+.info-parameters{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+table{
+    margin: auto;
+    max-height: 95vh;
+}
+
+th, td {
+    padding: 25px;
+    width: 150px;
+    border: 2px solid #BCBCBC;
+    text-align: center;
+}
+
+.alarm-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.alarm-indicator.red {
+    background-color: red;
+}
+
+.alarm-indicator.green {
+    background-color: green;
+}
+

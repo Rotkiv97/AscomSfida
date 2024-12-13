@@ -55,7 +55,7 @@ public class Program
 
 
         // Aggiungo anche la route predefinita per l'MVC
-        app.MapDefaultControllerRoute();
+        //app.MapDefaultControllerRoute();
 
         using (var serviceScope = app.Services.CreateScope())
         {
@@ -65,13 +65,13 @@ public class Program
             //if (patientsList != null && patientsList.Count > 0)
             //{
             //    Console.WriteLine("Lista pazienti ottenuta !!!");
-            //    //foreach (var patient in patientsList)
-            //    //{
-            //    //    //foreach (var item in patient.parameters)
-            //    //    //{
-            //    //    //    Console.WriteLine($"ID: {item.id}, Nome: {item.name}, Value: {item.value}, Alarm: {item.alarm}");
-            //    //    //}
-            //    //}
+            //    foreach (var patient in patientsList)
+            //    {
+            //        foreach (var item in patient.parameters)
+            //        {
+            //            Console.WriteLine($"ID: {item.id}, Nome: {item.name}, Value: {item.value}, Alarm: {item.alarm}");
+            //        }
+            //    }
             //}
             //else
             //{

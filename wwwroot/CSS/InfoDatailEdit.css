@@ -1,0 +1,79 @@
+.info-tr {
+    display: none;
+    position: relative;
+    z-index: auto;
+}
+
+.info-tr td {
+    padding: 0;
+    border: none;
+    width: auto;
+}
+
+.info-tr.show {
+    display: table-row;
+}
+
+
+.cell-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    color: white;
+    background-color: #DADADA;
+    margin-top: 0px;
+    padding-top: 0 6px;
+    gap: 10px;
+}
+
+.cell-info p {
+    font-size: 1.5em;
+    margin: 10px;
+    padding: 0px;
+    color: black;
+}
+
+.cell-info.show {
+    display: block;
+}
+
+.detail-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-40%, 0);
+    height: 100%;
+    gap: 100px;
+}
+
+.button-info {
+    height: 3vh;
+    width: 6vw;
+    color: white;
+    border-radius: 50px;
+    background-color: gray;
+    padding: 0;
+    border: 0px;
+}
+
+.button-info:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+input {
+    border: 2px solid dodgerblue;
+}
+
+input.input-change {
+    padding: 5px;
+    font-size: 0.8em;
+    border-radius: 50px;
+}
+
+input.input-change:hover {
+    box-shadow: 0 0 10px dodgerblue;
+    outline: none;
+}

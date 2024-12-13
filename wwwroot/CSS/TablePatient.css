@@ -1,0 +1,53 @@
+.patient-list {
+    position: relative;
+    width: 75%;
+    height: 95%;
+    /*max-height: 80vh;*/
+    overflow-y: auto;
+}
+
+table {
+    position: relative;
+    align-items: center;
+    width: 85%;
+    height: 100%;
+    /*border-collapse: collapse;*/
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.alarm-indicator {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.alarm-indicator.red {
+    background-color: red;
+}
+
+.alarm-indicator.green {
+    background-color: green;
+}
+
+
+
+.click-cell {
+    cursor: pointer;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.click-cell:hover {
+    background-color: dodgerblue;
+    color: white;
+    transform: scale(1.03);
+}
+
+.click-cell.active {
+    background-color: dodgerblue;
+    color: white;
+    transform: scale(1.07);
+}

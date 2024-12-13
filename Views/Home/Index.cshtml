@@ -7,6 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/CSS/Index.css" />
+    <link rel="stylesheet" href="~/CSS/TableFilterSort.css" />
+    <link rel="stylesheet" href="~/CSS/TablePatient.css" />
+    <link rel="stylesheet" href="~/CSS/InfoDatailEdit.css" />
+
     <title>Lista Pazienti</title>
 </head>
 <body>
@@ -22,46 +26,6 @@
             <input type="text" id="search-FamilyName"  class="search-button" placeholder="  Search ...  " />
         </div>
         <div class="grid-list">
-            @if (Model != null && Model.patients.Count > 0)
-            {
-                <div class="patient-list">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>GivenName</th>
-                                <th>FamilyName</th>
-                                <th>Sex</th>
-                                <th>Birth Date</th>
-                                <th>N.Parameters</th>
-                                <th>State Alarm</th>
-                                <th>Edit Patient</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var patient in Model.patients)
-                            {
-                                <tr>
-                                    <td>@patient.givenName</td>
-                                    <td>@patient.familyName</td>
-                                    <td>@patient.sex</td>
-                                    <td>@patient.birthDate.ToString("dd/MM/yyyy")</td>
-                                    <td>@patient.parameters.Count</td>
-                                    <td>
-                                        <span class="alarm-indicator @(patient.alarmIsActive ? "red" : "green")"></span>
-                                    </td>
-                                    <td>Edit</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            }
-            else
-            {
-                <div class="no-patients">
-                    <p>Non ci sono pazienti disponibili</p>
-                </div>
-            }
             <div class="filter-list">
                 <div class="header-filter">
                     <h1>Filter Patient</h1>
@@ -101,15 +65,62 @@
                     <button id="button-filter">Sorting</button>
                     <button id="button-restfilter">Reset</button>
                 </div>
-        </div>
+            </div>
+            @if (Model != null && Model.patients.Count > 0)
+            {
+                <div class="patient-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>GivenName</th>
+                                <th>FamilyName</th>
+                                <th>Sex</th>
+                                <th>Birth Date</th>
+                                <th>N° Parameters</th>
+                                <th>State Alarm</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var patient in Model.patients)
+                            {
+                                <tr>
+                                    <td class="click-cell" data-param="Given Name">@patient.givenName</td>
+                                    <td class="click-cell" data-param="Family Name">@patient.familyName</td>
+                                    <td class="click-cell" data-param="Sex">@patient.sex</td>
+                                    <td class="click-cell" data-param="Birth Date">@patient.birthDate.ToString("dd/MM/yyyy")</td>
+                                    <td class="click-cell" data-param="Parameters">@patient.parameters.Count</td>
+                                    <td class="click-cell" data-param="State Alarm">
+                                        <span class="alarm-indicator @(patient.alarmIsActive ? "red" : "green")"></span>
+                                    </td>
+                                </tr>
+                                <tr class="info-tr">
+                                    <td colspan="6">  
+                                        <div class="cell-info">
+                                            <p>Cell :</p>
+                                            <div class="detail-edit">
+                                                <button class="button-info" id="detail">Detail</button>
+                                                <button class="button-info" id="edit">Edit</button>
+                                                <button class="button-info" id="close">Close</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="no-patients">
+                    <p>Non ci sono pazienti disponibili</p>
+                </div>
+            }
         </div>
     </div>
     <script id="patients-data" type="application/json">
         @Html.Raw(ViewBag.PatientsJson ?? "{}")
     </script>
-    <script src="~/JS/Index.js"></script>
+    <script type="module"  src="~/JS/Index.js"></script>
 </body>
 </html>
-
-
-

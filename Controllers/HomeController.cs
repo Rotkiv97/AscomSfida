@@ -3,6 +3,7 @@ using GetIPAData.Services;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace AscomWebApp
 {
@@ -31,6 +32,18 @@ namespace AscomWebApp
             // Passa il JSON alla vista
             ViewBag.PatientsJson = patientsJson;
             return View(patients);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Parameters(int id)
+        {
+            var patientList = await _patientService.GetPatientsAsync();
+            var patient = patientList.FirstOrDefault(p => p.id == id);
+            if (patient == null) {
+                Debug.WriteLine("patient  non trovato e vouto");
+                return NotFound();
+            }
+            return View(patient);
         }
     }
 }
