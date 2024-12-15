@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using AscomWebApp;
 //using RazorPagesContacts.Data;
 
 /*  comando powerShell per controllare endpoint per ottenere la richiesta API
@@ -30,16 +31,18 @@ public class Program
         builder.Services.AddControllersWithViews(); 
         builder.Services.AddHttpClient<PatientService>();
         builder.Services.AddRazorPages();
-
+        builder.Services.AddLogging(configure => configure.AddConsole());
         var app = builder.Build();
         if (app.Environment.IsDevelopment())
         {
-            app.UseDeveloperExceptionPage(); // Mostra la pagina di errore in modalità sviluppo
+            // Mostra la pagina di errore in modalità sviluppo
+            app.UseDeveloperExceptionPage(); 
         }
         else
         {
             app.UseExceptionHandler("/Home/Error");
-            app.UseHsts(); // Abilita gli header HSTS
+            // Abilita gli header HSTS
+            app.UseHsts(); 
         }
 
         app.UseHttpsRedirection();
@@ -52,7 +55,6 @@ public class Program
 
         // Configura i controller e le Razor Pages come endpoint
         app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
         // Aggiungo anche la route predefinita per l'MVC
         //app.MapDefaultControllerRoute();

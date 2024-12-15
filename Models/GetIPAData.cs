@@ -10,6 +10,7 @@ using System.Text.Json.Serialization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Collections.Immutable;
+using Microsoft.AspNetCore.SignalR;
 
 namespace GetIPAData.Services
 {
@@ -38,12 +39,12 @@ namespace GetIPAData.Services
                     string responseBody = await response.Content.ReadAsStringAsync();
                     var patientsList = JsonSerializer.Deserialize<List<GetDataPatient>>(responseBody);
 
-                    if(patientsList != null)
+                    if (patientsList != null)
                     {
-                        //foreach (var item in patientsList)
-                        //{
-                        //    Console.WriteLine($"00) ID: {item.id}, Nome: {item.givenName} {item.familyName}, Sex: {item.sex} , Data: {item.birthDate}");
-                        //}
+                        foreach (var item in patientsList)
+                        {
+                            Console.WriteLine($"00) ID: {item.id}, Nome: {item.givenName} {item.familyName}, Sex: {item.sex} , Data: {item.birthDate}");
+                        }
 
                         var tmplistPatient = CheckedPatientList(patientsList);
                         var finalistPatient = CheckDoubleID(tmplistPatient);
@@ -69,6 +70,20 @@ namespace GetIPAData.Services
             catch (Exception ex)
             {
                 Console.WriteLine($"Exception: {ex.Message}");
+                return null;
+            }
+        }
+
+        public async Task<HttpResponseMessage> PostPatinetAsync(GetDataPatient patient)
+        {
+            try
+            {
+                var jsonContent = new StringContent(JsonSerializer.Serialize<GetDataPatient>(patient), Encoding.UTF8, "application/json");
+                return await _httpClient.PostAsync("Patient/Update", jsonContent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Eccezione nel PostPatinetAsync: {ex.Message}");
                 return null;
             }
         }
@@ -110,6 +125,12 @@ namespace GetIPAData.Services
                 tmplist.Add(item);
             }
 
+            tmplist = tmplist.OrderBy(p => p.id).ToList();
+            for(int i = 0; i < tmplist.Count; i++)
+            {
+                tmplist[i].id = i;
+            }
+
             return tmplist;
         }
 
@@ -128,11 +149,11 @@ namespace GetIPAData.Services
                     {
                         isValidpatient = false;
                     }
-                    if(!Regex.IsMatch(item.familyName, @"^[a-zA-Z]+$"))
+                    if(!Regex.IsMatch(item.familyName, @"^[a-zA-Z]+( [a-zA-Z]+)?$"))
                     {
                         isValidpatient = false;
                     }
-                    if(!Regex.IsMatch(item.givenName, @"^[a-zA-Z]+$"))
+                    if(!Regex.IsMatch(item.givenName, @"^[a-zA-Z]+( [a-zA-Z]+)?$"))
                     {
                         isValidpatient = false;
                     }
@@ -168,6 +189,7 @@ namespace GetIPAData.Services
                 {
                     tmplist.Add(item);
                 }
+                Console.WriteLine($"il Patient {item.givenName} è nato il  {item.birthDate}");
             }
             //Console.WriteLine($"il numero di pazienti filtrati ne check sono = {tmplist.Count}");
             return tmplist;

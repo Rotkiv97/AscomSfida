@@ -2,6 +2,10 @@ import { originalPatients, filteredPatients, searchPatinets, cellName, messageEr
 import { DetailButton, CloseButton, EditButton, InputChangeInfoPatient, ConfirmButton, Cancellbutton, ButtonBack } from './DetailEdit.js';
 
 
+export function parseDateToISO(dateStr) {
+    const [day, month, year] = dateStr.split('/');
+    return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+}
 export function RestOriginalInfo() {
     document.querySelectorAll('.cell-info').forEach(cellInfo => {
         cellInfo.innerHTML = `
@@ -203,7 +207,7 @@ export function getPatients() {
 
 export function IsValidInputNameLastName(string) {
     const check = /^[A-Za-z]+(?:\s[A-Za-z]+)?$/;
-    if (!check.test(string)) {
+    if (!check.test(string) || string.length < 2) {
         return false;
     }
     return true;
@@ -215,57 +219,47 @@ export function IsValidInputSex(string) {
 }
 
 export function ItAlreadyExists(tmpString, button) {
-    function getDate(date) {
-        if (date instanceof Date) {
-            return date;
-        }
-        const [day, month, year] = date.split('/');
-        return new Date(year, month - 1, day);
-    }
 
     const infoRow = button.closest('.info-tr');
     if (!infoRow) {
-        console.log("Nessuna Riga Trovata");
-        return false;
+        console.log("Nessuna riga trovata");
+        return true;
     }
 
-    //trovo e mi prendo i parametri della riga un cui sono
+    // Estrarre i valori della riga attiva
     const activeRow = infoRow.previousElementSibling;
     const givenName = activeRow.querySelector('[data-param="Given Name"]').textContent.trim();
     const familyName = activeRow.querySelector('[data-param="Family Name"]').textContent.trim();
     const sex = activeRow.querySelector('[data-param= "Sex"]').textContent.trim();
-    const birthDateString = getDate(activeRow.querySelector('[data-param="Birth Date"]').textContent.trim());
-    const birthDate = new Date(birthDateString);
+    const birthDateString = activeRow.querySelector('[data-param="Birth Date"]').textContent.trim();
+    const birthDate = parseDateToISO(birthDateString);
+
 
     const patient = originalPatients.find(p => {
-        const tmpDate = new Date(p.birthDate);
-        //console.log("p.birthDate con tmpDate e birthDate", tmpDate, " , ", birthDate);
-        return p.givenName === givenName && p.familyName === familyName && p.sex === sex && tmpDate.getTime() === birthDate.getTime();
+        const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
+        return (p.givenName === givenName && p.familyName === familyName && p.sex === sex && birthDate === tmpDatePatinet);
     });
 
     if (!patient) {
-        console.log("patient non torvato");
-        return false;
+        console.log("Paziente non trovato");
+        return true;
     }
+    console.log("Paziente trovato");
 
-    //conforta i dati che sto modificando con gli altri patient
-    const serarch = originalPatients.some(p => {
-        if (p.id === patient.id) return false;
-        if (cellName.value === "Given Name") {
-            if (p.givenName === tmpString && p.familyName === familyName && p.sex === sex && p.birthDate === birthDate)
-                return true;
-        }
-        if (cellName.value === "Family Name") {
-            if (p.givenName === givenName && p.familyName === tmpString && p.sex === sex && p.birthDate === birthDate)
-                return true;
-        }
-        if (cellName.value === "Sex") {
-            if (p.givenName === givenName && p.familyName === familyName && p.sex === tmpString && p.birthDate === birthDate)
-                return true;
-        }
-        return false;
-    })
-    return serarch;
+    // Confronto i dati modificati con gli altri pazienti
+    const isDuplicate = originalPatients.some(p => {
+        const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
+        if (p.id === patient.id)
+            return false;
+        if (cellName.value === "Given Name" && p.givenName === tmpString && p.familyName === familyName && p.sex === sex && tmpDatePatinet === birthDate)
+            return true;
+        else if (cellName.value === "Family Name" && p.givenName === givenName && p.familyName === tmpString && p.sex === sex && tmpDatePatinet === birthDate)
+            return true;
+        else if (cellName.value === "Sex" && p.givenName === givenName && p.familyName === familyName && p.sex === tmpString && tmpDatePatinet === birthDate)
+            return true;
+    });
+
+    return isDuplicate;
 }
 
 export function CheckInputEdit(input, button) {
@@ -276,27 +270,27 @@ export function CheckInputEdit(input, button) {
         if (IsValidInputNameLastName(tmpString)) {
             //normalizzo e capitalizzo i vari caratteri della string 
             tmpString = tmpString.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-            if (!ItAlreadyExists(tmpString, button)) {
-                console.log("tmpstring = ", tmpString);
-                return tmpString;
-            }
-            else {
+            if (ItAlreadyExists(tmpString, button)) {
                 messageError.value = `Error: It already exists "${input}"`;
                 return messageError.value;
+            }
+            else {
+                return tmpString;
             }
         }
     }
     else if (cellName.value === "Sex") {
         if (IsValidInputSex(tmpString)) {
-            tmpString.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
-            if (!ItAlreadyExists(tmpString, button))
-                return tmpString;
-            else {
+            tmpString = tmpString.split(/\s+/).map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+            if (ItAlreadyExists(tmpString, button)) {
                 messageError.value = `Error: It already exists "${input}"`;
                 return messageError.value;
             }
+            else {
+                return tmpString;
+            }
         }
     }
-    messageError.value = `Error: Invalid input "${input}"`;
+    messageError.value = `Error: Invalid Input = "${input}" `;
     return messageError.value;
 }

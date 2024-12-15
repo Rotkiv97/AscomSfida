@@ -1,5 +1,5 @@
 import { UpDateTablePatient, RestOriginalInfo, GestEnventClickCell, getPatients } from './Utils.js';
-import { CloseButton, DetailButton, ButtonBack, EditButton, InputChangeInfoPatient, ConfirmButton, Cancellbutton, YesButton, ErrorBackButton, NoButton, PostAsyncPatient } from './DetailEdit.js';
+import { CloseButton, DetailButton, ButtonBack, EditButton, InputChangeInfoPatient, ConfirmButton, Cancellbutton, YesButton, ErrorBackButton, NoButton} from './DetailEdit.js';
 import { FilterEndSortPatient, GestButtonFilterSort, ResetFilters, SearchPatient } from './FilterSort.js';
 
 
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('button-restfilter').addEventListener('click', ResetFilters);
     document.getElementById('search-GivenName').addEventListener('input', SearchPatient);
     document.getElementById('search-FamilyName').addEventListener('input', SearchPatient);
-   // document.getElementById('change-info').addEventListener('input', ChangeInfoPatint);
     document.querySelectorAll('td.click-cell').forEach(function (group) {
         group.addEventListener('click', function () {
             GestEnventClickCell(group);

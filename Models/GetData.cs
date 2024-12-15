@@ -37,7 +37,7 @@ namespace AscomWebApp
         [JsonPropertyName("parameters")]
         public List<Parameter> parameters { get; set;} = new List<Parameter>();
 
-        [JsonPropertyName("hasActiveAlarm")]
+        [JsonIgnore]
         public bool alarmIsActive => parameters.Any(p => p.alarm);
     }
 

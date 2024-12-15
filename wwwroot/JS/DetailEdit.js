@@ -1,5 +1,5 @@
 import { originalPatients, filteredPatients, cellName, inputValuePatient, messageError } from './Index.js';
-import { RestOriginalInfo, CheckInputEdit, IsValidInputNameLastName, IsValidInputSex, ItAlreadyExists, ResetOriginalInfoEdit } from './Utils.js';
+import { RestOriginalInfo, CheckInputEdit, IsValidInputNameLastName, IsValidInputSex, ItAlreadyExists, ResetOriginalInfoEdit, parseDateToISO } from './Utils.js';
 export function ButtonBack(button) {
     const infoRow = button.closest('.info-tr');
     if (infoRow) {
@@ -32,7 +32,6 @@ export function DetailButton(button) {
         const cell = document.querySelector('td.click-cell.active');
         //console.log(cellName.value);
         if (cell) {
-            // Trova il paziente associato alla riga della tabella
             const patient = originalPatients.find(p => p.givenName === cell.closest('tr').querySelector('[data-param="Given Name"]').textContent
                 && p.familyName === cell.closest('tr').querySelector('[data-param="Family Name"]').textContent);
             if (cellName.value === 'Parameters') {
@@ -100,14 +99,14 @@ export function InputChangeInfoPatient(input) {
 
 
 export function ConfirmButton(button) {
-    // qui dovo ottenere il mio id 
     const finalInput = CheckInputEdit(inputValuePatient.value, button);
-
+    inputValuePatient.value = "";
     if (finalInput != "" && finalInput != messageError.value) {
         const infoRow = button.closest('.info-tr');
         if (infoRow) {
             const cell = document.querySelector('td.click-cell.active');
             if (cell) {
+                inputValuePatient.value = finalInput;
                 const changeInfo = infoRow.querySelector('.cell-info');
                 changeInfo.innerHTML = `
                     <p>Change this parameter ${cellName.value} to : ${finalInput}</p>
@@ -133,6 +132,7 @@ export function ConfirmButton(button) {
         infoRow.style.display = 'table-row';
         infoRow.classList.add('show');
     }
+    console.log(inputValuePatient.value);
 }
 
 
@@ -157,11 +157,91 @@ export function Cancellbutton(button) {
     }
 }
 
-export function YesButton(button) {
-    //seconda conferma per utilizzare la bunzione PostAsyncPatient()
-    if (button.id === 'yes') {
-        
+async function PostAsyncPatient(patient) {
+    if (patient.alarmIsActive === true || patient.alarmIsActive === false) {
+        delete patient.alarmIsActive;
     }
+
+    if (patient.birthDate) {
+        let dateCustom = new Date(patient.birthDate);
+        if (isNaN(dateCustom.getTime())) {
+            console.error("Data di nascita non valida:", patient.birthDate);
+            return;
+        }
+        patient.birthDate = dateCustom.toISOString();
+    }
+    //console.log("Dati inviati al server:", JSON.stringify(patient, null, 2));
+    try {
+        const response = await fetch('http://localhost:5120/Home/PostPatientApi', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(patient),
+        });
+
+        if (response.ok) {
+            const text = await response.text();
+            if (text) {
+                const serverResult = JSON.parse(text);
+                console.log("ServerResult:", serverResult);
+            }
+            else {
+                console.warn("Risposta vuota dal server.");
+            }
+            originalPatients.length = 0;
+            window.location.reload();
+        } else {
+            console.error("Errore nella risposta del server:", response.status, response.statusText);
+        }
+    }
+    catch (error) {
+        console.error("Errore nella chiamata PostAsyncPatient:", error);
+    }
+}
+
+export async function YesButton(button) {
+    //seconda conferma per utilizzare la funzione PostAsyncPatient()
+    console.log("YesButton");
+
+    if (button.id === 'yes') {
+        const infoRow = button.closest('.info-tr');
+        if (!infoRow) {
+            console.log("Nessuna Riga Trovata");
+            return false;
+        }
+
+        //trovo e mi prendo i parametri della riga un cui sono
+        const activeRow = infoRow.previousElementSibling;
+        const givenName = activeRow.querySelector('[data-param="Given Name"]').textContent.trim();
+        const familyName = activeRow.querySelector('[data-param="Family Name"]').textContent.trim();
+        const sex = activeRow.querySelector('[data-param= "Sex"]').textContent.trim();
+        const birthDateString = activeRow.querySelector('[data-param="Birth Date"]').textContent.trim();
+        const birthDate = parseDateToISO(birthDateString);
+
+
+        const patient = originalPatients.find(p => {
+            const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
+            return (p.givenName === givenName && p.familyName === familyName && p.sex === sex && birthDate === tmpDatePatinet);
+        });
+        if (patient) {
+            console.log(cellName.value);
+            if (cellName.value === "Given Name") {
+                patient.givenName = inputValuePatient.value;
+            }
+            else if (cellName.value === "Family Name") {
+                patient.familyName = inputValuePatient.value;
+            }
+            else if (cellName.value === "Sex") {
+                patient.sex = inputValuePatient.value;
+            }
+            await PostAsyncPatient(patient);
+        }
+        else {
+            console.log("patient non trovato");
+        }
+    }
+    inputValuePatient.value = "";
+    CloseButton(button);
+    ResetOriginalInfoEdit();
 }
 
 export function NoButton(button) {
@@ -174,8 +254,4 @@ export function ErrorBackButton(button) {
     if (button.id === 'error-back') {
         ResetOriginalInfoEdit();
     }
-}
-
-export function PostAsyncPatient(){
-    
 }
