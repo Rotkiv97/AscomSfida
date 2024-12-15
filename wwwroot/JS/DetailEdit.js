@@ -1,5 +1,5 @@
 import { originalPatients, filteredPatients, cellName, inputValuePatient, messageError } from './Index.js';
-import { RestOriginalInfo, CheckInputEdit, IsValidInputNameLastName, IsValidInputSex, ItAlreadyExists, ResetOriginalInfoEdit, parseDateToISO } from './Utils.js';
+import { RestOriginalInfo, CheckInputEdit, IsValidInputNameLastName, IsValidInputSex, ItAlreadyExists, ResetOriginalInfoEdit, parseDateToISO, normalizeDateISO } from './Utils.js';
 export function ButtonBack(button) {
     const infoRow = button.closest('.info-tr');
     if (infoRow) {
@@ -128,11 +128,11 @@ export function ConfirmButton(button) {
                     <button class="button-info" id="error-back"> back </button>`;
             }
         }
-        console.log("Error Final Input ", messageError.value);
+        //console.log("Error Final Input ", messageError.value);
         infoRow.style.display = 'table-row';
         infoRow.classList.add('show');
     }
-    console.log(inputValuePatient.value);
+    //console.log(inputValuePatient.value);
 }
 
 
@@ -215,11 +215,12 @@ export async function YesButton(button) {
         const familyName = activeRow.querySelector('[data-param="Family Name"]').textContent.trim();
         const sex = activeRow.querySelector('[data-param= "Sex"]').textContent.trim();
         const birthDateString = activeRow.querySelector('[data-param="Birth Date"]').textContent.trim();
-        const birthDate = parseDateToISO(birthDateString);
+        const birthDate = normalizeDateISO(parseDateToISO(birthDateString));
 
 
         const patient = originalPatients.find(p => {
-            const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
+            const tmpDatePatinet = normalizeDateISO(p.birthDate);
+            //console.log(birthDate, " | ", tmpDatePatinet);
             return (p.givenName === givenName && p.familyName === familyName && p.sex === sex && birthDate === tmpDatePatinet);
         });
         if (patient) {

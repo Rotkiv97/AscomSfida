@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VkhRNeE+OznH5Yp2EzXzba7jIXc5aGYjgwMaehSRwWM=",
+  "Hash": "ZcbceFGdfGxTJPbN6XiTIAE1RA3bl6XQvv5Esbrg0tk=",
   "Source": "AscomWebApp",
   "BasePath": "_content/AscomWebApp",
   "Mode": "Default",
@@ -136,8 +136,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "i67pz29fax",
-      "Integrity": "motThVgSKIIHHkOHF4Z4Ewv+YcPkWXC9CMbRDBRUFb4=",
+      "Fingerprint": "2wawitx4rh",
+      "Integrity": "IvVxhde76itSPrRjr0RAwYQUf1g5KzDEmWne348dvzo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\HomePage.png"
@@ -157,8 +157,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fj3cnj1ejq",
-      "Integrity": "FTCewZEJiLzb/qlDm8b1ow3eTMxMKEXAH8Sj+t4aGGk=",
+      "Fingerprint": "b084wnhk9y",
+      "Integrity": "i+2Zl6wP6DwW8jtiTbRu1FJr9M3lOoiQr5cRJNeamFs=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\JS\\DetailEdit.js"
@@ -178,8 +178,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "ln616mgq4j",
-      "Integrity": "8TV40aIIMsUxnw8aGvVMn7QtXCGr8nfBa9wt0rthGFA=",
+      "Fingerprint": "0xkt44un7d",
+      "Integrity": "JMOMxAtDG5kh4pvPqI0SuRoFhzk9YI23THhriim3L3U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\JS\\FilterSort.js"
@@ -199,8 +199,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "5hkcg8s3dy",
-      "Integrity": "V13iII+wtjK3bbb5o3LG+N1309A6Hz0sSNPxshYLiy0=",
+      "Fingerprint": "z8q3k1k8oa",
+      "Integrity": "XeASug5QOZn4ZJ8//8Pg9k50w9g9X5EMPGHdPkuQYt0=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\JS\\Index.js"
@@ -220,8 +220,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "8h9y07tfhy",
-      "Integrity": "fHD2He5s9M8gKkXjqtVT389S3qco3E0sg20cxgMk7Xg=",
+      "Fingerprint": "2r0o3toqdw",
+      "Integrity": "Mm8ETZyhT2vxfv+qUSAzN7x4qBfyvh5PgKtJLuv2CYg=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\JS\\Utils.js"
@@ -639,7 +639,7 @@
       ]
     },
     {
-      "Route": "images/HomePage.i67pz29fax.png",
+      "Route": "images/HomePage.2wawitx4rh.png",
       "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\images\\HomePage.png",
       "Selectors": [],
       "ResponseHeaders": [
@@ -649,7 +649,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "56748"
+          "Value": "59505"
         },
         {
           "Name": "Content-Type",
@@ -657,11 +657,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"motThVgSKIIHHkOHF4Z4Ewv+YcPkWXC9CMbRDBRUFb4=\""
+          "Value": "\"IvVxhde76itSPrRjr0RAwYQUf1g5KzDEmWne348dvzo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Dec 2024 18:58:11 GMT"
+          "Value": "Sun, 15 Dec 2024 13:22:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -671,7 +671,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "i67pz29fax"
+          "Value": "2wawitx4rh"
         },
         {
           "Name": "label",
@@ -679,7 +679,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-motThVgSKIIHHkOHF4Z4Ewv+YcPkWXC9CMbRDBRUFb4="
+          "Value": "sha256-IvVxhde76itSPrRjr0RAwYQUf1g5KzDEmWne348dvzo="
         }
       ]
     },
@@ -694,7 +694,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "56748"
+          "Value": "59505"
         },
         {
           "Name": "Content-Type",
@@ -702,11 +702,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"motThVgSKIIHHkOHF4Z4Ewv+YcPkWXC9CMbRDBRUFb4=\""
+          "Value": "\"IvVxhde76itSPrRjr0RAwYQUf1g5KzDEmWne348dvzo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 08 Dec 2024 18:58:11 GMT"
+          "Value": "Sun, 15 Dec 2024 13:22:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -716,12 +716,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-motThVgSKIIHHkOHF4Z4Ewv+YcPkWXC9CMbRDBRUFb4="
+          "Value": "sha256-IvVxhde76itSPrRjr0RAwYQUf1g5KzDEmWne348dvzo="
         }
       ]
     },
     {
-      "Route": "JS/DetailEdit.fj3cnj1ejq.js",
+      "Route": "JS/DetailEdit.b084wnhk9y.js",
       "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\DetailEdit.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -731,7 +731,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11154"
+          "Value": "10163"
         },
         {
           "Name": "Content-Type",
@@ -739,11 +739,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FTCewZEJiLzb/qlDm8b1ow3eTMxMKEXAH8Sj+t4aGGk=\""
+          "Value": "\"i+2Zl6wP6DwW8jtiTbRu1FJr9M3lOoiQr5cRJNeamFs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 10:09:51 GMT"
+          "Value": "Sun, 15 Dec 2024 16:09:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -753,7 +753,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fj3cnj1ejq"
+          "Value": "b084wnhk9y"
         },
         {
           "Name": "label",
@@ -761,7 +761,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-FTCewZEJiLzb/qlDm8b1ow3eTMxMKEXAH8Sj+t4aGGk="
+          "Value": "sha256-i+2Zl6wP6DwW8jtiTbRu1FJr9M3lOoiQr5cRJNeamFs="
         }
       ]
     },
@@ -776,7 +776,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "11154"
+          "Value": "10163"
         },
         {
           "Name": "Content-Type",
@@ -784,11 +784,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"FTCewZEJiLzb/qlDm8b1ow3eTMxMKEXAH8Sj+t4aGGk=\""
+          "Value": "\"i+2Zl6wP6DwW8jtiTbRu1FJr9M3lOoiQr5cRJNeamFs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 10:09:51 GMT"
+          "Value": "Sun, 15 Dec 2024 16:09:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -798,7 +798,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-FTCewZEJiLzb/qlDm8b1ow3eTMxMKEXAH8Sj+t4aGGk="
+          "Value": "sha256-i+2Zl6wP6DwW8jtiTbRu1FJr9M3lOoiQr5cRJNeamFs="
+        }
+      ]
+    },
+    {
+      "Route": "JS/FilterSort.0xkt44un7d.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\FilterSort.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7762"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"JMOMxAtDG5kh4pvPqI0SuRoFhzk9YI23THhriim3L3U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 16:07:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0xkt44un7d"
+        },
+        {
+          "Name": "label",
+          "Value": "JS/FilterSort.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-JMOMxAtDG5kh4pvPqI0SuRoFhzk9YI23THhriim3L3U="
         }
       ]
     },
@@ -813,7 +858,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7760"
+          "Value": "7762"
         },
         {
           "Name": "Content-Type",
@@ -821,11 +866,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"8TV40aIIMsUxnw8aGvVMn7QtXCGr8nfBa9wt0rthGFA=\""
+          "Value": "\"JMOMxAtDG5kh4pvPqI0SuRoFhzk9YI23THhriim3L3U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 10:13:18 GMT"
+          "Value": "Sun, 15 Dec 2024 16:07:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -835,97 +880,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-8TV40aIIMsUxnw8aGvVMn7QtXCGr8nfBa9wt0rthGFA="
-        }
-      ]
-    },
-    {
-      "Route": "JS/FilterSort.ln616mgq4j.js",
-      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\FilterSort.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7760"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"8TV40aIIMsUxnw8aGvVMn7QtXCGr8nfBa9wt0rthGFA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Thu, 12 Dec 2024 10:13:18 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "ln616mgq4j"
-        },
-        {
-          "Name": "label",
-          "Value": "JS/FilterSort.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-8TV40aIIMsUxnw8aGvVMn7QtXCGr8nfBa9wt0rthGFA="
-        }
-      ]
-    },
-    {
-      "Route": "JS/Index.5hkcg8s3dy.js",
-      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7095"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"V13iII+wtjK3bbb5o3LG+N1309A6Hz0sSNPxshYLiy0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 09:20:03 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "5hkcg8s3dy"
-        },
-        {
-          "Name": "label",
-          "Value": "JS/Index.js"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-V13iII+wtjK3bbb5o3LG+N1309A6Hz0sSNPxshYLiy0="
+          "Value": "sha256-JMOMxAtDG5kh4pvPqI0SuRoFhzk9YI23THhriim3L3U="
         }
       ]
     },
@@ -940,7 +895,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7095"
+          "Value": "3479"
         },
         {
           "Name": "Content-Type",
@@ -948,11 +903,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"V13iII+wtjK3bbb5o3LG+N1309A6Hz0sSNPxshYLiy0=\""
+          "Value": "\"XeASug5QOZn4ZJ8//8Pg9k50w9g9X5EMPGHdPkuQYt0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 09:20:03 GMT"
+          "Value": "Sun, 15 Dec 2024 10:37:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -962,13 +917,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-V13iII+wtjK3bbb5o3LG+N1309A6Hz0sSNPxshYLiy0="
+          "Value": "sha256-XeASug5QOZn4ZJ8//8Pg9k50w9g9X5EMPGHdPkuQYt0="
         }
       ]
     },
     {
-      "Route": "JS/Utils.8h9y07tfhy.js",
-      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Utils.js",
+      "Route": "JS/Index.z8q3k1k8oa.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Index.js",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -977,7 +932,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13976"
+          "Value": "3479"
         },
         {
           "Name": "Content-Type",
@@ -985,11 +940,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fHD2He5s9M8gKkXjqtVT389S3qco3E0sg20cxgMk7Xg=\""
+          "Value": "\"XeASug5QOZn4ZJ8//8Pg9k50w9g9X5EMPGHdPkuQYt0=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 09:54:49 GMT"
+          "Value": "Sun, 15 Dec 2024 10:37:12 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -999,7 +954,52 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "8h9y07tfhy"
+          "Value": "z8q3k1k8oa"
+        },
+        {
+          "Name": "label",
+          "Value": "JS/Index.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XeASug5QOZn4ZJ8//8Pg9k50w9g9X5EMPGHdPkuQYt0="
+        }
+      ]
+    },
+    {
+      "Route": "JS/Utils.2r0o3toqdw.js",
+      "AssetFile": "C:\\Users\\EURONICS\\Desktop\\AscomWebApp\\wwwroot\\JS\\Utils.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "12390"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Mm8ETZyhT2vxfv+qUSAzN7x4qBfyvh5PgKtJLuv2CYg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 15 Dec 2024 15:42:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2r0o3toqdw"
         },
         {
           "Name": "label",
@@ -1007,7 +1007,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-fHD2He5s9M8gKkXjqtVT389S3qco3E0sg20cxgMk7Xg="
+          "Value": "sha256-Mm8ETZyhT2vxfv+qUSAzN7x4qBfyvh5PgKtJLuv2CYg="
         }
       ]
     },
@@ -1022,7 +1022,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "13976"
+          "Value": "12390"
         },
         {
           "Name": "Content-Type",
@@ -1030,11 +1030,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"fHD2He5s9M8gKkXjqtVT389S3qco3E0sg20cxgMk7Xg=\""
+          "Value": "\"Mm8ETZyhT2vxfv+qUSAzN7x4qBfyvh5PgKtJLuv2CYg=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sun, 15 Dec 2024 09:54:49 GMT"
+          "Value": "Sun, 15 Dec 2024 15:42:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1044,7 +1044,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-fHD2He5s9M8gKkXjqtVT389S3qco3E0sg20cxgMk7Xg="
+          "Value": "sha256-Mm8ETZyhT2vxfv+qUSAzN7x4qBfyvh5PgKtJLuv2CYg="
         }
       ]
     }

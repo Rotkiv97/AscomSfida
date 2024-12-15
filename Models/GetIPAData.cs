@@ -41,10 +41,10 @@ namespace GetIPAData.Services
 
                     if (patientsList != null)
                     {
-                        foreach (var item in patientsList)
-                        {
-                            Console.WriteLine($"00) ID: {item.id}, Nome: {item.givenName} {item.familyName}, Sex: {item.sex} , Data: {item.birthDate}");
-                        }
+                        //foreach (var item in patientsList)
+                        //{
+                        //    Console.WriteLine($"00) ID: {item.id}, Nome: {item.givenName} {item.familyName}, Sex: {item.sex} , Data: {item.birthDate}");
+                        //}
 
                         var tmplistPatient = CheckedPatientList(patientsList);
                         var finalistPatient = CheckDoubleID(tmplistPatient);
@@ -189,7 +189,7 @@ namespace GetIPAData.Services
                 {
                     tmplist.Add(item);
                 }
-                Console.WriteLine($"il Patient {item.givenName} è nato il  {item.birthDate}");
+                //Console.WriteLine($"il Patient {item.givenName} è nato il  {item.birthDate}");
             }
             //Console.WriteLine($"il numero di pazienti filtrati ne check sono = {tmplist.Count}");
             return tmplist;

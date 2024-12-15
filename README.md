@@ -9,9 +9,10 @@
 3. [Configurazione in Program.cs](#configurazione-in-programcs)
 4. [Gestione delle API](#gestione-delle-api)
 5. [Filtraggio e Ordinamento](#filtraggio-e-ordinamento)
-6. [Tecnologie Usate](#tecnologie-usate)
-7. [Run e Avvio](#run-e-avvio)
-8. [More Info](#more-info)
+6. [Detail e Edit](#detail-edit)
+7. [Tecnologie Usate](#tecnologie-usate)
+8. [Run e Avvio](#run-e-avvio)
+9. [More Info](#more-info)
 
 ## Descrizione del Progetto
 
@@ -25,6 +26,7 @@ I dati vengono deserializzati e mostrati in una tabella dinamica, che può esser
 - **Controllers**: Gestisce la logica di navigazione e l'interazione con i modelli.
 - **Models**: Contiene le classi per deserializzare i dati ottenuti dall'API.
 - **Views**: Include le pagine Razor per la visualizzazione dei dati.
+- **JS**: 
 
 ### Configurazione in `Program.cs`
 Nel file `Program.cs`, ho configurato i seguenti servizi:
@@ -55,7 +57,7 @@ Nel file **`/Models/GetIPAData.cs`**, ho creato il servizio `PatientService`.
     - Successivamente vengo fatti dei controlli su ogni paziente, per poi essere aggiunti alla lista del modello `Patients`.
 
 ### Filtraggio e Ordinamento
-#### File **`Index.js`**
+#### File **`FilterSort.js`**
 Questo file gestisce tutto il sistema di Filtraggio, Sort e Search ed eventi click.
 1. #### **Gestione degli eventi dei Button**
 2. #### **Funzione `GetDataPatient()`**
@@ -64,6 +66,35 @@ Questo file gestisce tutto il sistema di Filtraggio, Sort e Search ed eventi cli
 5. #### **Funzione `ResetFilters()`**
 6. #### **Funzione `SearchPatient()`**
 
+---
+### Detail e Edit
+#### File **`DetailEdit.js`** e **`HomeController.cs`**
+1. #### **Gestione Degli eventi `Detail` `Edit` `Close` `Back` `Confirm` `Cancell` `Input`  **
+#### **Funzioni Principali**
+
+1. **`DetailButton(button)`**
+   - Gestisce le informazioni relative a un paziente.
+   - Se l'utente si trova nella colonna dei *Parameters*, crea una nuova vista Razor Pages (`Parameters.cshtml`) e invia una chiamata al controller (`HomeController.cs`).
+
+2. **`EditButton(button)`**
+   - Quando viene attivato, ricrea l'elemento `.cell-info`, genera un elemento `<input>` dinamico e mostra i pulsanti `Confirm`, `Cancell` e `Back`.
+
+3. **`InputChangeInfoPatient(input)`**
+   - Salva dinamicamente i dati inseriti.
+
+4. **`ConfirmButton(button)`**
+   - Al verificarsi dell'evento `Confirm`, controlla la validità dell'input.
+   - Ricrea l'elemento `.cell-info` e, in caso di errore, mostra un messaggio oppure richiede un'ulteriore conferma.
+
+5. **`YesButton(button)`**
+   - Dopo aver superato i controlli, aggiorna le informazioni del paziente.
+   - Chiama la funzione **`PostAsyncPatient(patient)`** per inviare i dati aggiornati.
+
+6. **`PostAsyncPatient(patient)`**
+   - Esegue una richiesta POST al controller `HomeController.cs`.
+   - Aggiorna i dati del paziente attraverso l'API.
+
+---
 ### Tecnologie Usate
 ```
 Framework: ASP.NET Core

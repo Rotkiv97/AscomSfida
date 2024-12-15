@@ -68,7 +68,7 @@ namespace AscomWebApp
                     var content = await response.Content.ReadAsStringAsync();
                     if (string.IsNullOrEmpty(content))
                     {
-                        return Ok(new { success = true, message = "Paziente aggiornato con successo, ma senza risposta dettagliata." });
+                        return Ok(new { success = true, message = "Paziente aggiornato con successo" });
                     }
                     return Ok(content);
                 }

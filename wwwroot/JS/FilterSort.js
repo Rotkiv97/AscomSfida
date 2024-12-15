@@ -1,7 +1,6 @@
 import { filteredPatients, originalPatients, cellName, searchPatinets } from './Index.js';
 import { UpDateTablePatient } from './Utils.js';
 
-//questa funzione gestique i filtri attivi e me li orgina, e mi rende alla fine una nuova tabella aggiornata grazie a UpDateTablePatient
 //questa funzione mi gestisce la doppia scelta dei button di filtraggio e riordinamento
 export function GestButtonFilterSort(group) {
     group.querySelectorAll('button').forEach(function (button) {
@@ -54,7 +53,7 @@ export function FilterEndSortPatient() {
             }
 
             if (stateAlarm) {
-                let isActiveAlarm = stateAlarm === 'Active'; // Converte in booleano
+                let isActiveAlarm = stateAlarm === 'Active';
                 if (patient.alarmIsActive !== isActiveAlarm) {
                     isPositive = false;
                 }
@@ -124,7 +123,7 @@ export function FilterEndSortPatient() {
     }
 
     if (filteredPatients.length === 0) {
-        console.log("Nessun paziente trovato per i criteri di filtro.");
+        //console.log("Nessun paziente trovato per i criteri di filtro.");
     }
 
     UpDateTablePatient(filteredPatients);

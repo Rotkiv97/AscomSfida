@@ -1,11 +1,20 @@
 import { originalPatients, filteredPatients, searchPatinets, cellName, messageError } from './Index.js';
 import { DetailButton, CloseButton, EditButton, InputChangeInfoPatient, ConfirmButton, Cancellbutton, ButtonBack } from './DetailEdit.js';
 
+export function normalizeDateISO(date) {
+    return date.split('T')[0];
+}
+export function parseDateToISO(date) {
+    if (!date) return null;
+    const [day, month, year] = date.split('/').map(part => part.trim());
+    if (!day || !month || !year) {
+        console.log('Formato di data non valido:', date);
+        return null;
+    }
 
-export function parseDateToISO(dateStr) {
-    const [day, month, year] = dateStr.split('/');
     return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 }
+
 export function RestOriginalInfo() {
     document.querySelectorAll('.cell-info').forEach(cellInfo => {
         cellInfo.innerHTML = `
@@ -76,17 +85,16 @@ export function ResetOriginalInfoEdit() {
 }
 
 export function GestEnventClickCell(group) {
-    const currentlyActive = document.querySelector('td.click-cell.active');
-    const currentlyShownInfo = document.querySelector('.info-tr.show');
+    const cellActive = document.querySelector('td.click-cell.active');
+    const shownInfo = document.querySelector('.info-tr.show');
 
-    if (currentlyActive && currentlyActive !== group) {
-        if (currentlyShownInfo) {
-            //console.log(currentlyActive);
+    if (cellActive && cellActive !== group) {
+        if (shownInfo) {
             RestOriginalInfo();
-            currentlyShownInfo.style.display = 'none';
-            currentlyShownInfo.classList.remove('show');
+            shownInfo.style.display = 'none';
+            shownInfo.classList.remove('show');
         }
-        currentlyActive.classList.remove('active');
+        cellActive.classList.remove('active');
     }
 
     const tr = group.closest('tr');
@@ -135,6 +143,7 @@ export function GestEnventClickCell(group) {
     }
 }
 
+//questa funzione mi restituisce la tabella con la lista dei patients aggiornati
 export function UpDateTablePatient(PatientFilter) {
         const table = document.querySelector('.patient-list tbody');
         table.innerHTML = '';
@@ -226,29 +235,30 @@ export function ItAlreadyExists(tmpString, button) {
         return true;
     }
 
+
     // Estrarre i valori della riga attiva
     const activeRow = infoRow.previousElementSibling;
     const givenName = activeRow.querySelector('[data-param="Given Name"]').textContent.trim();
     const familyName = activeRow.querySelector('[data-param="Family Name"]').textContent.trim();
     const sex = activeRow.querySelector('[data-param= "Sex"]').textContent.trim();
     const birthDateString = activeRow.querySelector('[data-param="Birth Date"]').textContent.trim();
-    const birthDate = parseDateToISO(birthDateString);
-
+    const birthDate = normalizeDateISO(parseDateToISO(birthDateString));
 
     const patient = originalPatients.find(p => {
-        const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
-        return (p.givenName === givenName && p.familyName === familyName && p.sex === sex && birthDate === tmpDatePatinet);
+        let tmpDatePatinet = normalizeDateISO(p.birthDate);
+        //console.log(birthDate, " ", tmpDatePatinet);
+        return (p.givenName === givenName && p.familyName === familyName && p.sex === sex && tmpDatePatinet === birthDate);
     });
 
     if (!patient) {
         console.log("Paziente non trovato");
         return true;
     }
-    console.log("Paziente trovato");
 
     // Confronto i dati modificati con gli altri pazienti
     const isDuplicate = originalPatients.some(p => {
-        const tmpDatePatinet = new Date(p.birthDate).toISOString().split('T')[0];
+        let tmpDatePatinet = normalizeDateISO(p.birthDate);
+        //console.log(birthDate , " ", tmpDatePatinet);
         if (p.id === patient.id)
             return false;
         if (cellName.value === "Given Name" && p.givenName === tmpString && p.familyName === familyName && p.sex === sex && tmpDatePatinet === birthDate)

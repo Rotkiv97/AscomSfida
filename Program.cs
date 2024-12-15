@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using AscomWebApp;
-//using RazorPagesContacts.Data;
 
 /*  comando powerShell per controllare endpoint per ottenere la richiesta API
     $auth = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("test:TestMePlease!"))
@@ -56,29 +55,10 @@ public class Program
         // Configura i controller e le Razor Pages come endpoint
         app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 
-        // Aggiungo anche la route predefinita per l'MVC
-        //app.MapDefaultControllerRoute();
-
         using (var serviceScope = app.Services.CreateScope())
         {
             var patientService = serviceScope.ServiceProvider.GetRequiredService<PatientService>();
             var patientsList = await patientService.GetPatientsAsync();
-
-            //if (patientsList != null && patientsList.Count > 0)
-            //{
-            //    Console.WriteLine("Lista pazienti ottenuta !!!");
-            //    foreach (var patient in patientsList)
-            //    {
-            //        foreach (var item in patient.parameters)
-            //        {
-            //            Console.WriteLine($"ID: {item.id}, Nome: {item.name}, Value: {item.value}, Alarm: {item.alarm}");
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Non ci sono pazienti disponibili.");
-            //}
         }
 
         app.MapGet("/", (HttpContext context) =>
